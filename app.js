@@ -42,6 +42,7 @@ app.get('/users/:id/edit', user.edit);
 app.post('/users/:id', user.update);
 
 app.get('/groups', group.list);
+app.get('/groups/new', group.newGroup);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

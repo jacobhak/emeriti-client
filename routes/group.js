@@ -7,6 +7,10 @@ exports.list = function(req, res){
   });
 };
 
+exports.newGroup = function(req, res) {
+  res.render('group_new.jade', {title: "ny grupp"});
+};
+
 var sys = require('util'),
     rest = require('restler');
 
