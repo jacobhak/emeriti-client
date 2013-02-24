@@ -53,10 +53,10 @@ var sys = require('util'),
     rest = require('restler');
 
 User = rest.service(function() {
-    this.defaults.username = "username22";
-    this.defaults.password = "password22";
+    this.defaults.username = "hej"
+    this.defaults.password = "lelle"
   },{
-    baseURL: "http://0.0.0.0:5000/"
+    baseURL: "http://rocky-mountain-1049.herokuapp.com/"
   }, {
     index: function() {
       console.log("/users")
