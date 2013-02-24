@@ -1,13 +1,24 @@
 extends layout
 
 block content
-  h1= title
-
-  p We have a list of users
-  a(href="/users/new") Create a new user
-
-  ul
-    -for user in users
-      li
-        a(href="/users/#{user._id}")= user.email
-        a(href="/users/#{user._id}/delete") Remove
+  table.users
+    thead
+      tr
+        th Name
+        th Email
+        th Active
+        th Groups
+        th &nbsp;
+    tbody
+      -for user in users
+        tr
+          td.string
+            a(href="/users/#{user._id}")= user.name || "unknown"
+          td.string
+            a(href="mailto:#{user.email}")= user.email
+          td.duration
+            "#{user.startYear}&rarr;#{user.endYear}"
+          td.string
+            = user.groups
+          td.actions
+            a(href="/users/#{user._id}/delete") Remove
