@@ -24,7 +24,7 @@ exports.createGroup = function(req, res) {
 exports.removeGroup = function(req, res) {
   var g = new Group();
   g.removeGroup(req.params.id).on('complete', function() {
-    res.redirect("/index");
+    res.redirect("/groups");
   })
 }
 
@@ -48,7 +48,7 @@ Group = rest.service(function() {
       console.log('d');
       return this.json('post', this.baseURL + "/users", params);
     },
-    removeGroup: function() {
+    removeGroup: function(id) {
       return this.del("/groups/" + id);
     }
   }
