@@ -9,5 +9,5 @@ block content
   ul
     -for group in groups
       li
-        a(href="/users/#{group._id}")= group.name
+        a(href="/users/#{group._id}") Grupp: #{group.name}
         a(href="/users/#{group._id}/delete") Remove
