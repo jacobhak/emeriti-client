@@ -32,8 +32,9 @@ body {
 	width: 540px;
 }
 
-#header {
+#header, #header a {
 	color: #fff;
+	text-decoration: none;
 }
 
 #title {
@@ -52,7 +53,6 @@ body {
 	float: left;
 	margin-right: 4px;
 	padding: 5px 15px;
-	color: #fff;
 	background: #acf;
 }
 
