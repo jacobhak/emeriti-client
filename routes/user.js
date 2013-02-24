@@ -5,7 +5,7 @@ exports.list = function(req, res){
 };
 
 exports.newUser = function(req, res) {
-	res.render('new_user.jade', {title: "ny user"});
+	res.render('user_new.jade', {title: "ny user"});
 }
 
 exports.create = function(req, res) {
