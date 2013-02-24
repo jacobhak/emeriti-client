@@ -4,3 +4,8 @@ block content
   h1= title
   p We have a list of users
   a(href="/users/new") Create a new user
+
+  ul
+    -for user in users
+      li
+        a(href="/user/#{user._id}")= user.email
