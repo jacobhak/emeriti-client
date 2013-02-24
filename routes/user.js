@@ -53,8 +53,13 @@ var sys = require('util'),
     rest = require('restler');
 
 User = rest.service(function() {
+<<<<<<< HEAD
     this.defaults.username = "username22";
     this.defaults.password = "password22";
+=======
+    this.defaults.username = "hej"
+    this.defaults.password = "lelle"
+>>>>>>> 9ce9704cd3af1a883b5eb398de9760ddb12d9349
   },{
     baseURL: "http://0.0.0.0:5000/"
   }, {
