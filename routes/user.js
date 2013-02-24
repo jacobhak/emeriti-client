@@ -34,6 +34,20 @@ exports.show = function(req, res) {
   })
 }
 
+exports.edit = function(req, res) {
+  var user = new User();
+  user.user(req.params.id).on('complete', function (data) {
+    res.send(data);
+  })
+}
+
+exports.update = function(req,res) {
+  var user = new User();
+  user.user(req.params.id).on('complete', function (data) { //not finished
+    res.send(data);
+  })
+}
+
 var sys = require('util'),
     rest = require('restler');
 
