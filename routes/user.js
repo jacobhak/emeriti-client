@@ -15,6 +15,8 @@ exports.create = function(req, res) {
   var sys = require('util'),
     rest = require('restler');
 
+  console.log(req.body);
+  
   var jsonData = req.body;
   var url = "http://rocky-mountain-1049.herokuapp.com/users";
   console.log(jsonData);
