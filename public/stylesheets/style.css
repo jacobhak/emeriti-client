@@ -1,8 +1,93 @@
+/* Reset {{{ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd,
+q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li,
+form, fieldset, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+/* }}} */
+/*{{{ Layout */
+
 body {
-  padding: 50px;
+	color: #444;
+	background: #8be;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+#wrapper {
+	margin: 20px auto 40px;
+	width: 540px;
 }
+
+#header {
+	color: #fff;
+}
+
+#title {
+	float: left;
+	margin: 0 40px 0 20px;
+}
+
+#nav {
+	float: left;
+	margin: 14px 0 0 0;
+	list-style-type: none;
+}
+#nav li { display: inline; }
+#nav a {
+	display: block;
+	float: left;
+	margin-right: 4px;
+	padding: 5px 15px;
+	color: #fff;
+	background: #acf;
+}
+
+#body {
+	clear: both;
+	padding: 20px;
+	background: #fff;
+}
+
+#body > *:first-child { margin-top: 0; }
+
+/*}}}*/
+/*{{{ Typography */
+
+h1, h2, h3, h4 { margin: 1em 0 0; }
+h1 { font-size: 2.5em; }
+h2 { font-size: 2.0em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.0em; margin-top: 0.5em; }
+
+p, ul, ol, dl { margin: 1em 0 1em; }
+
+a {
+  color: #0bf;
+	text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/*}}}*/
+/*{{{ Responsive */
+
+@media screen and (max-width: 540px) {
+	#wrapper {
+		width: inherit;
+	}
+}
+
+/*}}}*/
