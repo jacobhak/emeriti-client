@@ -2,7 +2,8 @@
 exports.list = function(req, res){
   var u = new User();
   u.index().on('complete', function(data) {
-    res.send(data);
+    res.render ('user_index.jade',
+      { title: "userlist", users: data});
   });
 };
 
@@ -35,7 +36,7 @@ User = rest.service(function() {
       return this.get("/users"); 
     },
     user: function(id) {
-      return this.get("/users/" + id);
+      return this.get("/user/" + id);
     }
   }
 )
