@@ -4,19 +4,27 @@ exports.list = function(req, res){
   u.index().on('complete', function(data) {
     res.render ('group_index.jade',
       { title: "groups", groups: data });
-  });
-};
+  })
+}
 
 exports.newGroup = function(req, res) {
   res.render('group_new.jade', {title: "ny grupp"});
-};
+}
 
 
 exports.createGroup = function(req, res) {
   
   var g = new Group();
-  g.create(req.body).on('complete', function(data) {
+
+  g.create(req.params).on('complete', function(data) {
     res.redirect("/groups");
+  });
+}
+
+exports.removeGroup = function(req, res) {
+  var g = new Group():
+  g.removeGroup(req.params.id).on('complete', function() {
+    res.redirect("/index");
   })
 }
 
@@ -34,7 +42,13 @@ Group = rest.service(function() {
       return this.get("/groups"); 
     },
     create: function(params) {
-      return this.json('post', this.baseURL + "/groups", params);
+      console.log ('create');
+      console.log(params);
+      console.log('d');
+      return this.json('post', this.baseURL + "/users", params);
+    },
+    removeGroup: function() {
+      return this.del("/groups/" ' id');
     }
   }
 )

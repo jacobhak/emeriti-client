@@ -1,8 +1,4 @@
 
-/**
- * Module dependencies.
- */
-
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
@@ -44,6 +40,7 @@ app.post('/users/:id', user.update);
 app.get('/groups', group.list);
 app.get('/groups/new', group.newGroup);
 app.post('/groups', group.createGroup);
+app.get('/groups/:id/delete', group.removeGroup);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
