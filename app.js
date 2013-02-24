@@ -7,11 +7,15 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , flash = require('connect-flash');
 
 var app = express();
 
 app.configure(function(){
+  app.use(express.cookieParser('keyboard cat'));
+  app.use(express.session({ cookie: { maxAge: 60000 }}));
+  app.use(flash());
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
