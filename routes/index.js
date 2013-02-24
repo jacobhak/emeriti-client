@@ -5,6 +5,6 @@
 
 exports.index = function(req, respons){
 	respons.render ('index.jade',
-		{ title: "emeriti"});
+		{ title: "emeriti", usercount: "5"});
 };
 

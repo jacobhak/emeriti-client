@@ -1,4 +1,9 @@
 extends layout
 
 block content
-	p Welcome to hall
+	p hello
+	form(name="input", action="/users", method="post")
+		| Email:
+		input(type="text", name="email")
+
+		input(type="submit", value="Submit")

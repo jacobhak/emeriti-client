@@ -30,6 +30,7 @@ app.configure('development', function(){
 app.get('/users/new', user.newUser);
 app.get ('/', routes.index);
 app.get ('/users', user.list);
+app.post('/users', user.create)
 
 
 http.createServer(app).listen(app.get('port'), function(){
