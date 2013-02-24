@@ -32,7 +32,7 @@ app.get ('/', routes.index);
 app.get ('/users', user.list);
 app.post('/users', user.create);
 app.get('/users/:id', user.show);
-app.get('user/:id/edit', user.edit);
+app.get('/users/:id/edit', user.edit);
 app.post('/users/:id', user.update);
 
 
