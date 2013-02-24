@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+
+  p We have a list of groups
+  a(href="/users/new") Create a new group
+
+  ul
+    -for group in groups
+      li
+        a(href="/users/#{group._id}")= group.name
+        a(href="/users/#{group._id}/delete") Remove

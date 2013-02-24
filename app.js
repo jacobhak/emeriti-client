@@ -6,6 +6,7 @@
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
+  , group = require('./routes/group')
   , http = require('http')
   , path = require('path')
   , flash = require('connect-flash');
@@ -39,6 +40,8 @@ app.get('/users/:id/delete', user.remUser);
 app.get('/users/:id', user.show);
 app.get('/users/:id/edit', user.edit);
 app.post('/users/:id', user.update);
+
+app.get('/groups', group.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

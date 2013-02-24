@@ -53,17 +53,20 @@ var sys = require('util'),
     rest = require('restler');
 
 User = rest.service(function() {
+    this.defaults.username = "username22";
+    this.defaults.password = "password22";
   },{
-    baseURL: "http://rocky-mountain-1049.herokuapp.com/"
+    baseURL: "http://0.0.0.0:5000/"
   }, {
     index: function() {
+      console.log("/users")
       return this.get("/users"); 
     },
     user: function(id) {
       return this.get("/users/" + id);
     },
     update: function(id, params) {
-      return this.json('post',this.baseURL+"users/"+id, params);
+      return this.json('post',this.baseURL+"/users/"+id, params);
     },
     create: function(params) {
       console.log("increate");
