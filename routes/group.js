@@ -49,7 +49,7 @@ Group = rest.service(function() {
       return this.json('post', this.baseURL + "/users", params);
     },
     removeGroup: function() {
-      return this.del("/groups/" ' id');
+      return this.del("/groups/" + id);
     }
   }
 )
