@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	p hello
+	form(name="input", action="/users/#{user._id}", method="post")
+		p
+			| Email:
+			input(type="text", name="email", value=user.email)
+
+		p
+			| Name:
+			input(type="text", name="name", value=user.name)
+
+		p
+			| Date Of Birth
+			input(type="text", name="dateOfBirth")
+		p
+			| Year started at KTHD
+			input(type="text", name="startYear")
+		p
+			| Year completed studies at KTHD
+			input(type="text", name="endYear")
+
+		input(type="submit", value="Submit")

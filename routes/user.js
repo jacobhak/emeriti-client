@@ -31,7 +31,21 @@ exports.remUser = function(req, res) {
 exports.show = function(req, res) {
   var user = new User();
   user.user(req.params.id).on('complete', function (data) {
-    res.send(data);
+    res.render('user_show.jade', {title: data.name, user: data});
+  })
+}
+
+exports.edit = function(req, res) {
+  var user = new User();
+  user.user(req.params.id).on('complete', function (data) {
+    res.render('user_edit.jade',{title: data.name, user: data});
+  })
+}
+
+exports.update = function(req,res) {
+  var user = new User();
+  user.update(req.params.id, req.body).on('complete', function (data) { //not finished
+    res.send("User updated!");
   })
 }
 
@@ -47,6 +61,9 @@ User = rest.service(function() {
     },
     user: function(id) {
       return this.get("/users/" + id);
+    },
+    update: function(id, params) {
+      return this.json('post',this.baseURL+"users/"+id, params);
     },
     create: function(params) {
       console.log("increate");
