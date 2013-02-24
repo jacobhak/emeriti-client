@@ -2,7 +2,8 @@
 exports.list = function(req, res){
   var u = new User();
   u.index().on('complete', function(data) {
-    res.send(data);
+    res.render ('user_index.jade',
+      { title: "userlist", users: data});
   });
 };
 
@@ -14,6 +15,8 @@ exports.create = function(req, res) {
   var sys = require('util'),
     rest = require('restler');
 
+  console.log(req.body);
+  
   var jsonData = req.body;
   var url = "http://rocky-mountain-1049.herokuapp.com/users";
   console.log(jsonData);
@@ -42,7 +45,7 @@ User = rest.service(function() {
       return this.get("/users"); 
     },
     user: function(id) {
-      return this.get("/users/" + id);
+      return this.get("/user/" + id);
     }
   }
 )
