@@ -7,7 +7,7 @@ exports.list = function(req, res){
 };
 
 exports.newUser = function(req, res) {
-	res.render('user_new.jade', {title: "ny user"});
+  res.render('user_new.jade', {title: "ny user"});
 }
 
 exports.create = function(req, res) {
@@ -22,6 +22,13 @@ exports.create = function(req, res) {
     console.log ('user created');
   });
   res.send("post user");
+}
+
+exports.show = function(req, res) {
+  var user = new User();
+  user.user(req.params.id).on('complete', function (data) {
+    res.send(data);
+  })
 }
 
 var sys = require('util'),
