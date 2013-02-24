@@ -1,5 +1,10 @@
 extends layout
 
 block content
-	p hello
-	
+  p hello
+  form(name="input", action="/groups", method="post")
+    p
+      | Name:
+      input(type="text", name="name")
+
+    input(type="submit", value="Submit")

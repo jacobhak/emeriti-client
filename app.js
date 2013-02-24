@@ -35,7 +35,7 @@ app.configure('development', function(){
 app.get('/users/new', user.newUser);
 app.get ('/', routes.index);
 app.get ('/users', user.list);
-app.post('/users', user.create);
+app.post('/users', user.createUser);
 app.get('/users/:id/delete', user.remUser);
 app.get('/users/:id', user.show);
 app.get('/users/:id/edit', user.edit);
@@ -43,6 +43,7 @@ app.post('/users/:id', user.update);
 
 app.get('/groups', group.list);
 app.get('/groups/new', group.newGroup);
+app.post('/groups', group.createGroup);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

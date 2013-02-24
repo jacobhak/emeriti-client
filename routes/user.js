@@ -11,7 +11,7 @@ exports.newUser = function(req, res) {
   res.render('user_new.jade', {title: "ny user"});
 }
 
-exports.create = function(req, res) {
+exports.createUser = function(req, res) {
   
   var u = new User();
   console.log(req.body);
