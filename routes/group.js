@@ -27,7 +27,7 @@ Group = rest.service(function() {
     this.defaults.username = "hej";
     this.defaults.password = "lelle";
   },{
-    baseURL: "http://0.0.0.0:5000/"
+    baseURL: "http://rocky-mountain-1049.herokuapp.com/"
   }, {
     index: function() {
       console.log("/groups")
