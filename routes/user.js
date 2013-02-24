@@ -58,8 +58,11 @@ var sys = require('util'),
     rest = require('restler');
 
 User = rest.service(function() {
+    this.defaults.username = "hej"
+    this.defaults.password = "lelle"
   },{
-    baseURL: "http://rocky-mountain-1049.herokuapp.com/"
+//    baseURL: "http://rocky-mountain-1049.herokuapp.com/"
+    baseURL: "http://localhost:5000/"
   }, {
     index: function() {
       return this.get("/users"); 
