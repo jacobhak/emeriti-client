@@ -3,11 +3,12 @@ exports.list = function(req, res){
   index(req, res);
 };
 
-function index(req, res) {
+function index(req, res, input) {
+
   var u = new User();
   u.index().on('complete', function(data) {
     res.render ('user_index.jade',
-      { title: "userlist", users: data});
+      { title: "userlist", users: data, message: input});
   });
 }
 
@@ -20,7 +21,7 @@ exports.create = function(req, res) {
   var u = new User();
   console.log(req.body);
   u.create(req.body).on('complete', function(data) {
-    index(req, res);
+    index(req, res, "New user created!");
   })
 }
 
@@ -28,7 +29,7 @@ exports.remUser = function(req, res) {
   var u = new User();
 
   u.removeUser(req.params.id).on('complete', function(data) {
-    index(req, res);
+    index(req, res, "User successfully removed");
   })
 }
 
