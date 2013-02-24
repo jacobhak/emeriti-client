@@ -1,24 +1,22 @@
 extends layout
 
 block content
-	p hello
-	form(name="input", action="/users", method="post")
-		p
-			| Email:
-			input(type="text", name="email")
-
-		p
-			| Name:
-			input(type="text", name="name")
-
-		p
-			| Date Of Birth
-			input(type="text", name="dateOfBirth")
-		p
-			| Year started at KTHD
-			input(type="text", name="startYear")
-		p
-			| Year completed studies at KTHD
-			input(type="text", name="endYear")
-
-		input(type="submit", value="Submit")
+  form(name="input", action="/users", method="post")
+    fieldset
+      .input.text
+        label(for="i_email") Email
+        input(type="text", name="email", id="i_email")
+      .input.text
+        label(for="i_name") Name
+        input(type="text", name="name", id="i_name")
+      .input.date
+        label(for="i_dateOfBirth") Date of birth
+        input(type="text", name="dateOfBirth", id="i_dateOfBirth")
+      .input.short
+        label(for="i_startYear") Start year
+        input(type="text", name="startYear", id="i_startYear")
+      .input.short
+        label(for="i_endYear") Graduation year
+        input(type="text", name="endYear", id="i_endYear")
+    fieldset.actions
+      input(type="submit", value="Submit")
